@@ -14,7 +14,7 @@ def home( request ):
 def write_mail( request ):
     letter  = {
                 'to'      : 'my-friend@hotmail.com',
-                'subject' : 'hello'
+                'subject' : 'hello',
                 'msg'     : 'have a happy day 🦊',
             }
 

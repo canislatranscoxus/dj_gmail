@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  Write mail
+{% endblock %}
+
+{% block content %}
+<h1>Write a letter to a friend</h1>
+<br><br><br>
+<div >
+
+    <table>
+        <tr>
+            <td>
+                <form method="post" >
+                    <table>
+                        {{form.as_table}}
+                        {% csrf_token %}
+                    </table>
+                    <br/>
+                    <input type="submit" name="" value="Send">
+                </form>
+            </td>
+
+        </tr>
+    </table>
+
+    <br>
+    <hr>
+
+</div>
+{% endblock %}

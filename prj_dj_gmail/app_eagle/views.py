@@ -24,9 +24,9 @@ def write_mail( request ):
     if request.method=='POST':
         form = forms.LetterForm( request.POST )
         if form.is_valid():
-            to      = form.cleaned_data[ 'to'       ],
-            subject = form.cleaned_data[ 'subject'  ],
-            msg     = form.cleaned_data[ 'msg'      ],
+            to      = form.cleaned_data[ 'to'       ]
+            subject = form.cleaned_data[ 'subject'  ]
+            msg     = form.cleaned_data[ 'msg'      ]
 
             mail_sent = send_mail(subject,
                 msg,
@@ -34,12 +34,9 @@ def write_mail( request ):
                 [ to ] )            
             
             return redirect( 'app_eagle:mail_sent_ok' )
-            #return render(request, '/gui/mail_sent_ok.html' )
 
     dic[ 'form' ] = form
     return render( request, 'gui/write_mail.html', dic )
 
 def mail_sent_ok( request ):
     return render(request, 'gui/mail_sent_ok.html')
-
-

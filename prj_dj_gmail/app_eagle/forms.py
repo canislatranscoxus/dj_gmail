@@ -8,6 +8,5 @@ class LetterForm( forms.Form ):
     subject = forms.CharField( max_length = 100 )
     msg     = forms.CharField(  )
 
-
     def clean(self):
         user_cleaned_data = super().clean()

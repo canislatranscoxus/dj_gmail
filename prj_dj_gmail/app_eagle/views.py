@@ -24,11 +24,12 @@ def write_mail( request ):
     if request.method=='POST':
         form = forms.LetterForm( request.POST )
         if form.is_valid():
-            to  = form.cleaned_data[ 'to'  ],
-            msg = form.cleaned_data[ 'message'    ],
+            to      = form.cleaned_data[ 'to'       ],
+            subject = form.cleaned_data[ 'subject'  ],
+            msg     = form.cleaned_data[ 'msg'      ],
 
             mail_sent = send_mail(subject,
-                message,
+                msg,
                 settings.EMAIL_HOST_USER,
                 [ to ] )            
             
